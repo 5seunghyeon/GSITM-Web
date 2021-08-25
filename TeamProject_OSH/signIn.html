@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <script src="js/signIn.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+<body>
+    아이디 : <input type="text" id="id" /> <button onclick="checkId()">중복체크</button><br />
+    비밀번호 : <input type="text" id="pw1" /> <br />
+    비밀번호 재학인: <input type="text" id="pw2" /> <button onclick="checkPw()">중복체크</button><br />
+    이름 : <input type="text" id="name" /> <br />
+    <button id="btnJoin" onclick="join()" disabled>회원가입</button>
+</body>
+</html>
