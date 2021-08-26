@@ -1,4 +1,6 @@
 var _userkey = "__user__";
+document.querySelector('input[name="radio"]').checked
+document.querySelector('input[name="radio"]:checked').value;
 
 function join() {
   var id = document.getElementById("id").value;
@@ -7,13 +9,14 @@ function join() {
   var pw1 = document.getElementById("pw1").value;
   // 두번째 비밀번호 입력창
   var pw2 = document.getElementById("pw2").value;
-
-  console.log(id, name, pw1);
+  var gender = document.getElementById("gender").value;
+  console.log(id, name, pw1,gender);
 
   var userInfo = {
     id: id,
     name: name,
     pw: pw1,
+    gender : gender
   };
 
   localStorage.setItem(_userkey + id, JSON.stringify(userInfo));

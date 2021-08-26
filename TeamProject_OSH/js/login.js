@@ -1,11 +1,10 @@
 const loginForm = document.getElementById("login-form");
 const loginBtn = document.getElementById("loginBtn");
 
-function onLogin() {
+function onLogin(event) {
   const mbrId = document.getElementById("mbrId");
   const mbrPw = document.getElementById("mbrPw");
 
-  console.log("submit");
   let id = mbrId.value;
   let pw = mbrPw.value;
 
@@ -13,7 +12,7 @@ function onLogin() {
 
   // localstorage에 입력한 id가 없을 경우
   if (!member) {
-    alert("다시 입력해주세요");
+    alert("없는 ID 입니다. 다시 입력해주세요.");
     mbrId.focus();
     mbrId.value = null;
     mbrPw.value = null;
@@ -21,18 +20,14 @@ function onLogin() {
   }
 
   // 로그인 성공시
-  else if (id === member.id && pw === member.pw) {
-    alert("로그인성공!");
-  }
-
-  // 로그인 & 비밀번호 입력 안할 시 경고창 뜸
-  if (id.length == 0) {
-    alert("ID를 입력해주세요!");
-    mbrId.focus();
+  if (id === member.id && pw === member.pw) {
+    alert(`${member.name}님 안녕하세요🙂`);
+    location.href("main_home.html");
+  } else if (pw !== member.pw) {
+    alert("비밀번호가 틀렸습니다. 다시 입력해주세요.");
     event.preventDefault();
-  } else if (pw.length == 0) {
-    alert("PASSWORD를 입력해주세요!");
     mbrPw.focus();
-    event.preventDefault();
   }
 }
+
+loginForm.addEventListener("submit", onLogin);
