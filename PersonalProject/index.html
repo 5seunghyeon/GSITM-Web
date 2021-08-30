@@ -4,15 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
     <title>to do list</title>
+    
+
+    <script defer src = "/js/clock.js"></script>
+    <script defer src = "/js/name.js"></script>
+    <script defer src = "/js/todo.js"></script>
 </head>
 <body>
     <h1>To Do LIST</h1>
+    <div class = "js-clock">
+        <h1>00:00:00</h1>
+    </div>
+    <form  class="js-form form">
+        <input type ="text" placeholder="What is you name?"/>
+    </form>
+
+    <h4 class="js-greetings greetings"></h4>
     <form class = "js-toDoForm">
-    <input type= "text" placeholder=" Write "/>
+        <input type= "text" placeholder="Write"/>
     </form>
     <ul class="js-toDoList">
     </ul>
-    <script src = "/js/todo.js"></script>
+   
 </body>
 </html> 
