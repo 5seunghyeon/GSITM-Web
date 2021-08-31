@@ -52,7 +52,6 @@ function handleSubmit(event)
     event.preventDefault();
     const currentValue = toDoInput.value;
     paintToDo(currentValue);
-    
 }
 
 function something(toDo)
@@ -67,11 +66,9 @@ function loadToDos()
     {
         const parsedToDos = JSON.parse(loadedToDos)
         parsedToDos.forEach(something);
-
     }
 
 }
-
 
 function init()
 {

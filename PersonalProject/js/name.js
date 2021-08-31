@@ -6,29 +6,30 @@ const USERNAME = "User",
     HIDE = "hide";
 
 
-function handleSubmit(event)
+function namehandle(event)
 {
     event.preventDefault();
     const UserValue = input.value;
-    paintGreeting(UserValue);
     localStorage.setItem(USERNAME, UserValue);
+    paintGreeting(UserValue);
 }
 
-function paintGreeting(text)
+function paintGreeting(User)
 {
     form.classList.remove(HIDE);
     greeting.classList.add(HIDE);
-    greeting.innerHTML = `Hello ${text}`;
+    greeting.innerText = `Hello ${User}`;
 }
 
-const saveUser = localStorage.getItem(USERNAME);
+const currentUser = localStorage.getItem(USERNAME);
 
-if(saveUser === null)
+    if(currentUser === null)
     {
         form.classList.add(HIDE);
-        form.addEventListener("submit", handleSubmit);
+        form.addEventListener("submit", namehandle);
     }
-else
+    else
     {
-        paintGreeting(saveUser);
+        paintGreeting(currentUser);
     }
+
